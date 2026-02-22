@@ -23,7 +23,7 @@ export function Hero() {
           </div>
         )}
 
-        {/* Role Label */}
+        {/* Role */}
         <p
           className="hero-animate mt-8 font-mono text-sm tracking-widest text-muted-foreground uppercase"
           style={{ '--delay': '100ms' } as CSSProperties}
@@ -47,13 +47,14 @@ export function Hero() {
           {siteConfig.tagline}
         </p>
 
-        {/* Supporting Text */}
+        {/* Supporting — the human touch */}
         <p
-          className="hero-animate mx-auto mt-4 max-w-lg text-base leading-relaxed text-muted-foreground/80"
+          className="hero-animate mx-auto mt-5 max-w-lg text-base leading-relaxed text-muted-foreground/80"
           style={{ '--delay': '400ms' } as CSSProperties}
         >
-          From first conversation to final deployment — I listen, architect, and
-          deliver production-grade systems. End to end. Solo.
+          Not because I&rsquo;m smarter. Because I listen first, understand the
+          real problem, then architect and deliver a complete system — end to
+          end, alone.
         </p>
 
         {/* CTAs */}
@@ -63,21 +64,24 @@ export function Hero() {
         >
           <Button asChild size="lg">
             <Link href="/projects">
-              View My Work
+              See My Work
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
           <Button variant="outline" size="lg" asChild>
-            <Link href="/contact">Get in Touch</Link>
+            <Link href="/contact">Let&rsquo;s Talk</Link>
           </Button>
         </div>
 
-        {/* Social */}
+        {/* Social + Location */}
         <div
-          className="hero-animate mt-10 flex justify-center"
+          className="hero-animate mt-10 flex flex-col items-center gap-4 opacity-0"
           style={{ '--delay': '600ms' } as CSSProperties}
         >
           <SocialLinks />
+          <p className="font-mono text-xs tracking-wide text-muted-foreground/50">
+            Based in Pakistan · Building for the world
+          </p>
         </div>
       </div>
     </section>

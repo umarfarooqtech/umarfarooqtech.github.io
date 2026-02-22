@@ -3,9 +3,9 @@ import type { SiteConfig } from '@/types';
 export const siteConfig: SiteConfig = {
   name: 'Umar Farooq',
   title: 'Full-Stack Developer & Product Architect',
-  tagline: 'I build complete digital products.',
+  tagline: 'I build what others couldn\'t.',
   description:
-    'Full-stack developer specializing in end-to-end product development. I listen, architect, and deliver production-grade systems — from first conversation to final deployment.',
+    'I don\'t start with code — I start with a conversation. I listen, understand the real problem, then architect and deliver a complete production system. End to end. Solo.',
   url: 'https://umarfarooq.dev',
 
   status: {

@@ -1,10 +1,10 @@
 export const aboutContent = {
-  headline: "I don't just write code — I solve business problems.",
+  headline: "The best code I've ever written started with a conversation, not a keyboard.",
 
   introduction: [
     "I'm a full-stack developer who builds complete digital products from the ground up. Not just frontends. Not just APIs. Complete systems — every layer, every platform, every edge case.",
-    "My approach starts with listening. Before I write a single line of code, I put myself in the user's position. I map out the experience as a user would live it, then translate that understanding into architecture and implementation.",
-    "I've spent the past year and a half building real products for real clients — including a full-scale restaurant management system spanning six interconnected platforms, built entirely solo for a client in Belgium.",
+    "But here's what actually matters: I listen before I build. I've seen what happens when developers skip that step — the client ends up with a product that technically works but doesn't solve their problem. I've been brought in after that happens, and I've seen the frustration firsthand.",
+    "Over the past year and a half, I've gone from building small projects to architecting a full-scale restaurant management platform — six interconnected systems, built entirely solo, for a client in Belgium. That project changed how I think about software, business, and what it means to actually deliver.",
   ],
 
   approach: [
@@ -12,25 +12,25 @@ export const aboutContent = {
       step: '01',
       title: 'Listen & Understand',
       description:
-        "I start by putting myself in the user's position. Understanding the problem comes before writing a single line of code. Requirements aren't surface-level requests — I dig deeper.",
+        "Before I write a single line of code, I become the user. What would frustrate me? What would I wish worked differently? I ask questions that surface the real problem — not just the surface-level request. When the client says \"yes, now you understand,\" that's when I start building.",
     },
     {
       step: '02',
       title: 'Architect',
       description:
-        'System design before code. I think about the full picture — platforms, data flow, real-time sync, performance, deployment, and edge cases.',
+        "I think in systems, not features. How do the pieces connect? What breaks under load? What happens when the user does something unexpected? These questions get answered before implementation begins — because redesigning architecture mid-project is exponentially more expensive than getting it right upfront.",
     },
     {
       step: '03',
       title: 'Build',
       description:
-        'Clean, maintainable, production-grade code. Every technical decision is intentional — from folder structure to API design to caching strategy.',
+        "Every function, every endpoint, every component is written with intention. Not for perfection — for reliability. Clean code isn't code that's clever. It's code that another developer can read six months later and immediately understand.",
     },
     {
       step: '04',
       title: 'Deliver',
       description:
-        'End to end. No handoffs, no gaps, no excuses. I take full ownership from concept to deployment and beyond.',
+        "I don't hand off half-finished work. From database schema to deployment config, I own every layer. When I say it's done, it's done — deployed, tested, and ready for real users.",
     },
   ],
 
@@ -38,26 +38,26 @@ export const aboutContent = {
     {
       title: 'AI will create more opportunities, not fewer.',
       description:
-        'AI will dramatically increase developer efficiency. The developers who understand business context and can translate needs into working systems will be more valuable, not less.',
+        'Everyone is talking about AI replacing developers. I think the opposite will happen. AI will dramatically increase what a single developer can accomplish — and the developers who understand business problems, not just syntax, will become more valuable than ever.',
     },
     {
-      title: 'Custom software demand is rising.',
+      title: 'The demand for custom software is just getting started.',
       description:
-        'SaaS works well for generic needs. But the demand for tailored, custom-built software is going to rise significantly. Developers who can deliver that kind of work independently will be in high demand.',
+        "SaaS handles generic needs well. But every business has unique problems, unique workflows, unique constraints. The gap between what off-the-shelf software offers and what businesses actually need is growing. Developers who can fill that gap — independently, end to end — will be in very high demand.",
     },
     {
-      title: 'Reliable beats perfect.',
+      title: 'Reliable beats perfect. Every time.',
       description:
-        "I used to believe everything should be perfect. Now I believe things should be reliable and good enough — and knowing the difference is itself a skill.",
+        "I used to chase perfection in every line of code. Now I know that shipping something reliable, well-tested, and good enough today is worth more than shipping something perfect next month. Knowing the difference between the two is itself a skill.",
     },
   ],
 
   workPreferences: [
-    'Remote-first arrangements',
-    'Asynchronous communication',
-    'Full ownership, end-to-end delivery',
-    'Clarity, autonomy, and results over micromanagement',
-    'Contract-based or flexible remote engagements',
+    'Remote-first — I do my best work with autonomy and deep focus',
+    'Asynchronous communication — fewer meetings, more building',
+    'Full ownership — I take a problem and come back with a working product',
+    'Contract-based or flexible engagements — aligned incentives, clear scope',
+    'Results over hours — I care about what gets shipped, not what time I logged in',
   ],
 
   techStack: {
@@ -81,7 +81,7 @@ export const aboutContent = {
       'Socket.IO',
       'WebSockets',
       'Zod Validation',
-      'Swagger/OpenAPI',
+      'Swagger / OpenAPI',
     ],
     mobile: ['React Native', 'Firebase Cloud Messaging'],
     desktop: ['Electron'],

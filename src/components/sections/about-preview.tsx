@@ -12,8 +12,8 @@ export function AboutPreview() {
             About
           </p>
 
-          <blockquote className="mt-6 border-l-2 border-foreground/20 pl-6 text-2xl leading-snug font-semibold tracking-tight md:text-3xl">
-            {aboutContent.headline}
+          <blockquote className="mt-6 text-2xl leading-snug font-semibold tracking-tight md:text-3xl">
+            &ldquo;{aboutContent.headline}&rdquo;
           </blockquote>
         </ScrollFade>
 
@@ -26,13 +26,15 @@ export function AboutPreview() {
             ))}
           </div>
 
-          <Link
-            href="/about"
-            className="group mt-6 inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-foreground"
-          >
-            More about me
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+          <div className="mt-6">
+            <Link
+              href="/about"
+              className="group inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-foreground"
+            >
+              The full story
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </ScrollFade>
       </Container>
     </Section>
