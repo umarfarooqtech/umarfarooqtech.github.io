@@ -1,4 +1,4 @@
-import { Container, Section, ScrollFade, TechTag, BackLink } from '@/components/common';
+import { Container, Section, ScrollFade, TechTag, BackLink, ProjectImage } from '@/components/common';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { SystemArchitecture } from './system-architecture';
@@ -8,6 +8,7 @@ import { DecisionCard } from './decision-card';
 import { PerformanceComparison } from './performance-comparison';
 import { HumanSide } from './human-side';
 import { ProjectNavigation } from '../project-navigation';
+import { ImageGallery } from '../image-gallery';
 import type { Project } from '@/types';
 
 interface CaseStudyLayoutProps {
@@ -44,8 +45,22 @@ export function CaseStudyLayout({ project }: CaseStudyLayoutProps) {
             </div>
           </ScrollFade>
 
+          {/* Cover Image */}
+          {project.coverImage && (
+            <ScrollFade delay={90}>
+              <div className="mt-10">
+                <ProjectImage
+                  src={project.coverImage}
+                  alt={`${project.title} — overview`}
+                  aspect="wide"
+                  priority
+                />
+              </div>
+            </ScrollFade>
+          )}
+
           {/* Metadata */}
-          <ScrollFade delay={100}>
+          <ScrollFade delay={120}>
             <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
               {[
                 { label: 'Role', value: project.role },
@@ -64,7 +79,7 @@ export function CaseStudyLayout({ project }: CaseStudyLayoutProps) {
           </ScrollFade>
 
           {/* Metrics */}
-          <ScrollFade delay={140}>
+          <ScrollFade delay={150}>
             <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
               {project.metrics.map(({ value, label }) => (
                 <Card key={label} className="h-full">
@@ -164,6 +179,29 @@ export function CaseStudyLayout({ project }: CaseStudyLayoutProps) {
                 </ScrollFade>
               ))}
             </div>
+          </Container>
+        </Section>
+      )}
+
+      {/* ═══════ SCREENSHOTS ═══════ */}
+      {project.images && project.images.length > 0 && (
+        <Section className="pt-0">
+          <Container>
+            <ScrollFade>
+              <Separator className="mb-16" />
+              <p className="font-mono text-sm tracking-widest text-muted-foreground/60 uppercase">
+                Visual
+              </p>
+              <h2 className="mt-4 text-2xl font-bold tracking-tight md:text-3xl">
+                Screenshots
+              </h2>
+            </ScrollFade>
+
+            <ScrollFade delay={80}>
+              <div className="mt-10">
+                <ImageGallery images={project.images} />
+              </div>
+            </ScrollFade>
           </Container>
         </Section>
       )}
@@ -300,7 +338,6 @@ export function CaseStudyLayout({ project }: CaseStudyLayoutProps) {
             </div>
           </ScrollFade>
 
-          {/* Navigation */}
           <ScrollFade delay={120}>
             <ProjectNavigation currentSlug={project.slug} />
           </ScrollFade>

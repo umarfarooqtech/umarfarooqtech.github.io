@@ -1,9 +1,10 @@
-import { Container, Section, ScrollFade, TechTag, BackLink } from '@/components/common';
+import { Container, Section, ScrollFade, TechTag, BackLink, ProjectImage } from '@/components/common';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ProjectNavigation } from './project-navigation';
+import { ImageGallery } from './image-gallery';
 import type { Project } from '@/types';
 
 interface ProjectLayoutProps {
@@ -38,8 +39,22 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
           </div>
         </ScrollFade>
 
+        {/* ── Cover Image ── */}
+        {project.coverImage && (
+          <ScrollFade delay={90}>
+            <div className="mt-10">
+              <ProjectImage
+                src={project.coverImage}
+                alt={`${project.title} — main screenshot`}
+                aspect="wide"
+                priority
+              />
+            </div>
+          </ScrollFade>
+        )}
+
         {/* ── Metadata Bar ── */}
-        <ScrollFade delay={100}>
+        <ScrollFade delay={120}>
           <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {[
               { label: 'Role', value: project.role },
@@ -57,16 +72,20 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
           </div>
         </ScrollFade>
 
-        {/* ── Metrics (if present) ── */}
+        {/* ── Metrics ── */}
         {project.metrics.length > 0 &&
           project.metrics.some((m) => m.value !== '—') && (
-            <ScrollFade delay={130}>
+            <ScrollFade delay={150}>
               <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
                 {project.metrics.map(({ value, label }) => (
                   <Card key={label} className="h-full">
                     <CardContent className="flex h-full flex-col items-center justify-center p-5 text-center">
-                      <p className="text-2xl font-bold tracking-tight">{value}</p>
-                      <p className="mt-1 text-sm text-muted-foreground">{label}</p>
+                      <p className="text-2xl font-bold tracking-tight">
+                        {value}
+                      </p>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {label}
+                      </p>
                     </CardContent>
                   </Card>
                 ))}
@@ -75,7 +94,7 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
           )}
 
         {/* ── Overview ── */}
-        <ScrollFade delay={160}>
+        <ScrollFade delay={180}>
           <Separator className="my-14" />
           <div>
             <h2 className="text-xl font-semibold tracking-tight">Overview</h2>
@@ -87,7 +106,7 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
 
         {/* ── Highlights ── */}
         {project.highlights.length > 0 && (
-          <ScrollFade delay={190}>
+          <ScrollFade delay={210}>
             <Separator className="my-14" />
             <div>
               <h2 className="text-xl font-semibold tracking-tight">
@@ -112,13 +131,26 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
           </ScrollFade>
         )}
 
+        {/* ── Screenshots / Gallery ── */}
+        {project.images && project.images.length > 0 && (
+          <ScrollFade delay={240}>
+            <Separator className="my-14" />
+            <div>
+              <h2 className="text-xl font-semibold tracking-tight">
+                Screenshots
+              </h2>
+              <div className="mt-6">
+                <ImageGallery images={project.images} />
+              </div>
+            </div>
+          </ScrollFade>
+        )}
+
         {/* ── Tech Stack ── */}
-        <ScrollFade delay={220}>
+        <ScrollFade delay={270}>
           <Separator className="my-14" />
           <div>
-            <h2 className="text-xl font-semibold tracking-tight">
-              Built With
-            </h2>
+            <h2 className="text-xl font-semibold tracking-tight">Built With</h2>
             <div className="mt-5 flex flex-wrap gap-2">
               {project.techStack.map((tech) => (
                 <TechTag key={tech} name={tech} />
@@ -129,7 +161,7 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
 
         {/* ── Links ── */}
         {(project.liveUrl || project.githubUrl) && (
-          <ScrollFade delay={250}>
+          <ScrollFade delay={300}>
             <Separator className="my-14" />
             <div className="flex flex-wrap gap-3">
               {project.liveUrl && (
@@ -161,7 +193,7 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
         )}
 
         {/* ── Navigation ── */}
-        <ScrollFade delay={280}>
+        <ScrollFade delay={330}>
           <ProjectNavigation currentSlug={project.slug} />
         </ScrollFade>
       </Container>

@@ -6,6 +6,7 @@ export type {
   Challenge,
   ArchitecturalDecision,
   PerformanceComparison,
+  ProjectImage
 } from './project.types';
 export type { BlogPost, BlogPostMeta, TocItem } from './blog.types';
 export type { NavItem } from './navigation.types';

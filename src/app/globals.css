@@ -576,3 +576,66 @@
 :root .hljs-deletion {
   color: oklch(0.5 0.2 25);
 }
+
+.img-loading {
+  background: linear-gradient(
+    110deg,
+    var(--muted) 30%,
+    oklch(from var(--muted) l c h / 0.6) 50%,
+    var(--muted) 70%
+  );
+  background-size: 200% 100%;
+  animation: img-shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes img-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Lightbox */
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: oklch(0 0 0 / 0.85);
+  backdrop-filter: blur(8px);
+  animation: lightbox-in 0.2s ease-out;
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox-image {
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+  animation: lightbox-scale-in 0.25s ease-out;
+}
+
+@keyframes lightbox-scale-in {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

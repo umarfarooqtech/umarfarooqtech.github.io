@@ -12,7 +12,20 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link href={`/projects/${project.slug}`} className="group block h-full">
-      <Card className="card-hover flex h-full flex-col">
+      <Card className="card-hover flex h-full flex-col overflow-hidden">
+        {/* Cover Image */}
+        {project.coverImage && (
+          <div className="aspect-video overflow-hidden bg-muted">
+            <img
+              src={project.coverImage}
+              alt={project.title}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+            />
+          </div>
+        )}
+
         <CardContent className="flex h-full flex-col p-6">
           {/* Meta row */}
           <div className="flex items-center justify-between">
@@ -29,14 +42,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.title}
           </h3>
 
-          {/* Description — fixed height via line clamp */}
+          {/* Description */}
           <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">
             {project.subtitle}
           </p>
 
           <Separator className="my-4" />
 
-          {/* Footer: tech + arrow */}
+          {/* Footer */}
           <div className="flex items-center justify-between gap-4">
             <div className="flex min-w-0 flex-wrap gap-1.5">
               {project.techStack.slice(0, 3).map((tech) => (

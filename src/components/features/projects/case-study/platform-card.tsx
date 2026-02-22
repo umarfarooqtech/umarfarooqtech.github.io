@@ -9,7 +9,20 @@ interface PlatformCardProps {
 
 export function PlatformCard({ platform, index }: PlatformCardProps) {
   return (
-    <Card className="h-full transition-colors hover:border-foreground/10">
+    <Card className="h-full overflow-hidden transition-colors hover:border-foreground/10">
+      {/* Platform Screenshot */}
+      {platform.image && (
+        <div className="aspect-video overflow-hidden bg-muted">
+          <img
+            src={platform.image}
+            alt={`${platform.name} screenshot`}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover"
+          />
+        </div>
+      )}
+
       <CardContent className="p-6">
         {/* Number + Title */}
         <div className="flex items-start gap-4">
