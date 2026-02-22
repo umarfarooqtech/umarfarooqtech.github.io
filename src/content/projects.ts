@@ -304,3 +304,13 @@ export function getProjectBySlug(slug: string): Project | undefined {
 export function getAllProjectSlugs(): string[] {
   return projects.map((p) => p.slug);
 }
+
+export function getProjectNavigation(currentSlug: string) {
+  const index = projects.findIndex((p) => p.slug === currentSlug);
+  if (index === -1) return { prev: undefined, next: undefined };
+
+  return {
+    prev: index > 0 ? projects[index - 1] : undefined,
+    next: index < projects.length - 1 ? projects[index + 1] : undefined,
+  };
+}
