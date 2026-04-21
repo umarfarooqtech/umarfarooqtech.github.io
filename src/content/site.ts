@@ -6,7 +6,7 @@ export const siteConfig: SiteConfig = {
   tagline: 'I build complete systems. Solo.',
   description:
     "I don't start with code — I start with a conversation. I listen, understand the real problem, then architect and deliver a complete production system. End to end. Solo.",
-  url: 'https://umarfarooq.dev',
+  url: 'https://umarfarooqtech.github.io',
 
   status: {
     available: true,
@@ -20,7 +20,7 @@ export const siteConfig: SiteConfig = {
   },
 
   social: {
-    github: 'https://github.com/umarfarooq',
+    github: 'https://github.com/umarfarooqtech',
     linkedin: 'https://linkedin.com/in/umarfarooq',
     twitter: 'https://x.com/umarfarooq',
   },
